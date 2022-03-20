@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head ::head"></head>
+<header>
+  <div th:replace="fragments/nav ::navBar"></div>
+</header>
+<body>
+<h2>Produkty - vytvoření</h2>
+<section>
+  <form action="#" th:action="@{/save-product}" th:object="${product}" method="post">
+    <input type="number" hidden th:field="*{id}">
+    <input type="text" th:field="*{name}"/>
+    <input type="number" th:field="*{cost}"/>
+    <input type="checkbox" th:field="*{availability}"/>
+    <input type="submit" value="Submit"/>
+  </form>
+</section>
+</body>
+</html>
